@@ -1,0 +1,12 @@
+FROM metro3230/telebots_basis
+
+ARG PROJECT_NAME=fap_bot
+ARG GROUP_ID=5000
+ARG USER_ID=500
+
+
+WORKDIR /app
+
+COPY . .
+
+CMD ["python3", "bot.py"]
