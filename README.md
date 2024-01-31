@@ -17,7 +17,7 @@ docker run --restart always -d --name fap_bot metro3230/fapbot
 ??? разобраься в докер компос?
 
 
-
+ 
 
 
 ++++++++++++++++++++++++++
