@@ -6,6 +6,9 @@
         "context": ".."
     },
     "remoteUser": "root",
-// "initializeCommand": "cp ../app/requirements.txt .",
-// "postCreateCommand": "pip3 install -r /workspaces/alkir-infra-api/app/requirements.txt",
+    "extensions": [
+                "ms-vscode-remote.remote-wsl",
+                "ms-python.vscode-pylance"
+            ],
 }
+
