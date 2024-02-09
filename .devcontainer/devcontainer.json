@@ -2,7 +2,7 @@
     "name": "fapbot_in_docker",
 
     "build": {
-        "dockerfile": "Dockerfile",
+        "dockerfile": "../Dockerfile",
         "context": ".."
     },
     "remoteUser": "root",
