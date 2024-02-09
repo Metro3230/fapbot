@@ -4,11 +4,7 @@ from aiogram.utils import executor
 from PIL import Image, ImageEnhance
 import os
 
-<<<<<<< HEAD
 from config import TOKEN
-=======
-from config import TOKEN, YOUR_CHAT_ID
->>>>>>> 141179902221be521275e95c77680a7723ce090d
 
 
 bot = Bot(token=TOKEN)
@@ -47,11 +43,7 @@ async def echo_message(msg: types.Message):
     else:
         await bot.send_message(usrid, 'Я не дрочу на буквы!')
     add_to_log(usrid, workdir + '/log.txt')
-<<<<<<< HEAD
     await bot.send_message(768168600, f'Username: {msg.from_user.first_name}\nMsg: {text}\nId: {usrid}')   #отправляем во второй чят
-=======
-    await bot.send_message(YOUR_CHAT_ID, f'Username: {msg.from_user.first_name}\nMsg: {text}\nId: {usrid}')   #отправляем во второй чят
->>>>>>> 141179902221be521275e95c77680a7723ce090d
 
 
 @dp.message_handler(content_types=["photo"])    
@@ -69,11 +61,7 @@ async def get_photo(message):
     zeropoint = int(img.size[1]) - hsize                                                        #начальная точка руки (что бы она была в левом нижнем углу)
     img.paste(hand, (0, zeropoint),  hand)                                                      #вставляем в нужное место
     img.save(workdir + '/photo/send-' + message.photo[-1].file_unique_id + '_hand.jpg')       #временно сохраняем
-<<<<<<< HEAD
     await bot.send_photo(768168600, message.photo[-1].file_id, caption=f'Username: {first_name}\nMsg: {caption}\nId: {usrid}')           #отправляем в мой другой чят
-=======
-    await bot.send_photo(YOUR_CHAT_ID, message.photo[-1].file_id, caption=f'Username: {first_name}\nMsg: {caption}\nId: {usrid}')           #отправляем в мой другой чят
->>>>>>> 141179902221be521275e95c77680a7723ce090d
     await bot.send_photo(usrid, types.InputFile(workdir + '/photo/send-' + message.photo[-1].file_unique_id + '_hand.jpg'))   #отправляем измененное 
     add_to_log(usrid, workdir + '/log.txt')
     os.remove(workdir + '/photo/send-' + message.photo[-1].file_unique_id + '_hand.jpg')     #удаляем
